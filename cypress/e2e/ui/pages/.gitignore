@@ -1,0 +1,23 @@
+# Node e dependências
+node_modules/
+package-lock.json
+dist/
+tmp/
+logs/
+
+# Cypress outputs
+videos/
+screenshots/
+allure-results/
+mochawesome-report/
+cypress/videos/
+cypress/screenshots/
+
+# IDE e SO
+.vscode/
+.DS_Store
+Thumbs.db
+
+# Arquivos de ambiente
+cypress.env.json
+.env
