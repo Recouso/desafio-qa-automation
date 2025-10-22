@@ -24,14 +24,111 @@
 
 ---
 
-## ✅ Requisitos
+# 🧩 Requisitos para rodar o projeto
 
-- **Node.js:** 18.x ou 20.x (recomendado LTS)
-  ```bash
-  node -v
-  npm -v
-  ```
-- **Git:** instalado
+---
+
+## 🟢 1️⃣ Node.js
+- **Versão mínima:** `v18.0.0`  
+- **Versão recomendada:** `v20.x LTS`  
+- Cypress e o plugin **Esbuild** exigem Node ≥18.
+
+Verifique sua versão:
+```bash
+node -v
+```
+
+📦 **Se não tiver o Node ou estiver com versão antiga:**
+
+### 💻 macOS / Linux (via NVM)
+```bash
+# Instala o NVM (Node Version Manager)
+curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.7/install.sh | bash
+
+# Recarrega o shell (feche e reabra o terminal ou rode:)
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"
+
+# Instala e usa o Node LTS (20.x)
+nvm install --lts
+nvm use --lts
+
+# Define como padrão
+nvm alias default 'lts/*'
+```
+
+### 🪟 Windows (via Chocolatey + NVM)
+```powershell
+choco install nvm -y
+nvm install 20
+nvm use 20
+```
+
+> 🔗 Alternativamente, baixe direto do site oficial: [https://nodejs.org/en/download](https://nodejs.org/en/download)
+
+---
+
+## 🟠 2️⃣ NPM (Gerenciador de pacotes)
+- **Recomendado:** `npm v9+`
+
+Verifique:
+```bash
+npm -v
+```
+
+Atualize (caso esteja desatualizado):
+```bash
+npm i -g npm@latest
+```
+
+---
+
+## 🔵 3️⃣ Cypress
+- **Versão mínima testada:** `^13.6.0`  
+- **Versão recomendada:** `^13.12.0`
+
+Verifique:
+```bash
+npx cypress --version
+```
+
+Instale (caso não tenha):
+```bash
+npm i -D cypress@13.12.0
+```
+
+---
+
+## 🟣 4️⃣ Cucumber + Esbuild (Plugins obrigatórios)
+
+Esses pacotes permitem rodar os testes `.feature` (BDD com Gherkin):
+
+| Pacote | Versão Recomendada | Função |
+|--------|--------------------|--------|
+| `@badeball/cypress-cucumber-preprocessor` | ^23.0.0 | Interpreta os arquivos `.feature` |
+| `@bahmutov/cypress-esbuild-preprocessor` | ^2.2.6 | Faz o build dos steps |
+| `esbuild` | ^0.19.0 | Motor rápido de transpile |
+
+Instale/garanta as versões corretas:
+```bash
+npm i -D @badeball/cypress-cucumber-preprocessor@^23 @bahmutov/cypress-esbuild-preprocessor@^2.2.6 esbuild@^0.19
+```
+
+---
+
+## 🧰 5️⃣ Outras dependências úteis
+
+Essenciais para geração dinâmica de dados e manipulação de arrays:
+
+| Pacote | Função |
+|--------|--------|
+| `@faker-js/faker` | Criação de usuários e dados aleatórios |
+| `lodash` | Funções utilitárias (ex: `Cypress._.shuffle()`) |
+
+Instale:
+```bash
+npm i -D @faker-js/faker lodash
+```
 
 ---
 
@@ -91,18 +188,6 @@ npm run test:ui
 ```bash
 npm run test:api
 ```
-
-📦 *Scripts definidos no `package.json`:*
-```json
-  "scripts": {
-    "open": "cypress open",
-    "open:all": "cypress open --e2e",
-    "test:ui": "cypress run --spec 'cypress/e2e/ui/**/*.{feature,cy.js}'",
-    "test:api": "cypress run --spec 'cypress/e2e/api/**/*.cy.js'",
-    "test:all": "cypress run --spec 'cypress/e2e/**/*.{feature,cy.js}'"
-  }
-```
-
 ---
 
 ## 🧾 Licença
