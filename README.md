@@ -132,31 +132,6 @@ npm i -D @faker-js/faker lodash
 
 ---
 
-## 🚀 Instalação e execução
-
-### 1️⃣ Clone o repositório
-```bash
-git clone https://github.com/<seu-usuario>/desafio-qa-automation.git
-cd desafio-qa-automation
-```
-
-### 2️⃣ Instale as dependências
-```bash
-npm ci
-# ou
-npm install
-```
-
-### 3️⃣ Configure variáveis de ambiente
-Crie o arquivo `cypress.env.json` na raiz do projeto:
-```json
-{
-  "apiBaseUrl": "https://demoqa.com"
-}
-```
-
----
-
 ## 🧪 Execução dos testes
 
 ### 🖥️ Modo interativo (Cypress GUI)
