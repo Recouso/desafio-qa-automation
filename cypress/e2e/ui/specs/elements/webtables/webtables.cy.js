@@ -1,4 +1,4 @@
-describe('Desafio QA Automation', () => {
+describe('Elements -> Web Tables', () => {
     beforeEach(() => {
         cy.visit('https://demoqa.com/')
         cy.intercept('GET', 'https://pagead2.googlesyndication.com/**', { statusCode: 204, body: '' })

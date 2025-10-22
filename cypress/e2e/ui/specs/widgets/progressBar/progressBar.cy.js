@@ -1,4 +1,4 @@
-describe('Desafio QA Automation', () => {
+describe('Widgets -> Progress Bar', () => {
     beforeEach(() => {
         cy.visit('https://demoqa.com/')
         cy.intercept('GET', 'https://pagead2.googlesyndication.com/**', { statusCode: 204, body: '' })

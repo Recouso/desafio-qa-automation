@@ -1,4 +1,4 @@
-Feature: Gerenciar registros dinâmicos no submenu Web Tables
+Feature: Elements -> Web Tables com cucumber
 
   Como QA no Desafio Frontend - Parte 2
   Quero criar, editar e deletar múltiplos registros com dados aleatórios

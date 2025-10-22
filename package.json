@@ -176,14 +176,15 @@
     "@faker-js/faker": "^10.1.0"
   },
   "scripts": {
-    "cy:open:ui": "cypress open --config-file cypress.ui.config.js",
-    "cy:run:ui": "cypress run  --config-file cypress.ui.config.js",
-    "cy:open:api": "cypress open --config-file cypress.api.config.js",
-    "cy:run:api": "cypress run  --config-file cypress.api.config.js"
+    "open": "cypress open",
+    "open:all": "cypress open --e2e",
+    "test:ui": "cypress run --spec 'cypress/e2e/ui/**/*.{feature,cy.js}'",
+    "test:api": "cypress run --spec 'cypress/e2e/api/**/*.cy.js'",
+    "test:all": "cypress run --spec 'cypress/e2e/**/*.{feature,cy.js}'"
   },
   "cypress-cucumber-preprocessor": {
     "stepDefinitions": [
-      "cypress/e2e/**/*.steps.{js,ts}"
+      "cypress/e2e/ui/stepDefinitions/**/*.steps.{js,ts}"
     ]
   },
   "keywords": [],
